@@ -7,13 +7,24 @@
 
 <h2>Search</h2>
 
-@using (Html.BeginForm("Search", "Home", FormMethod.Get))
-{
-    <p>
-        Title: @Html.TextBox("searchString") 
-        <input type="submit" value="Filter" />
-    </p>
-}
+<table class="table">
+    <tr>
+        <th>
+            @using (Html.BeginForm("Search", "Home", FormMethod.Get))
+            {
+                <p>
+                    Title: @Html.TextBox("searchString")
+                    <input type="submit" value="Filter" />
+                </p>
+            }
+        </th>
+        <th>
+            <p style="text-align:right">
+                @Html.ActionLink("Add New Movie", "AddMovie", "Add")
+            </p>
+        </th>
+    </tr>
+</table>
 
 <table class="table">
     <tr>
